@@ -8,7 +8,7 @@ Features:
 * Support for Magisk/KernelSU/KernelSU Next
 * Support for devices with and without mainline/conscrypt updates
 
-Depending on your Android version and Google Play Security Update version, your certificates will be either stored in `/system/etc/security/cacerts` or in `/apex/com.android.conscrypt/cacerts/`. This module handles all scenarios and works on any device from Android 7 until Android 16.
+Depending on your Android version and Google Play Security Update version, your certificates will be either stored in `/system/etc/security/cacerts` or in `/apex/com.android.conscrypt/cacerts/`. This module handles all scenarios and works on any device from Android 8 until Android 16.
 
 More background information can be found [in this blogpost](https://blog.nviso.eu/2025/06/05/intercepting-traffic-on-android-with-mainline-and-conscrypt/).
 ## Usage
@@ -22,6 +22,13 @@ Install the certificate as a user certificate and restart the device.
 Remove the certificate from the user store through the settings and restart the device.
 
 ## Changelog
+
+### v1.4
+
+* Improved compatibility for Android 14, 15, and 16
+* Enhanced backward compatibility for Android 8-13
+* Added dynamic detection of Conscrypt APEX path
+* Fixed SELinux context issues for injected certificates
 
 ### v1.3
 
